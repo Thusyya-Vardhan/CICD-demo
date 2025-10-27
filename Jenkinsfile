@@ -5,7 +5,7 @@ pipeline{
 
         stage("Checkout"){
             echo "Pulling code from git"
-            git https://github.com/Thusyya-Vardhan/CICD-demo.git
+            git branch :'main', url:"https://github.com/Thusyya-Vardhan/CICD-demo.git"
         }
 
         stage("Build"){
