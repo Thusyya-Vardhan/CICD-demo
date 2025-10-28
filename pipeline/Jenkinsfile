@@ -1,0 +1,38 @@
+pipeline{
+    agent any
+    
+    stages{
+
+        stage("Build"){
+            steps{
+            echo "Build stage : checking if all scripts exist"
+            bat 'dir *.py'
+        }
+    }
+
+
+        stage("Job 1"){
+            steps{
+                echo "Running Job 1.."
+                bat "python addition.py"                    
+            }
+        }
+
+        stage("Job 2"){
+            steps{
+                echo "Running Job 2.."
+                bat "python subtraction.py"
+            }
+        }
+
+        stage("Deploy"){
+            steps{
+            echo "Deploying jobs..."
+             bat '''
+            if not exist C:\\deploy_test mkdir C:\\deploy_test
+            xcopy /E /Y * C:\\deploy_test\\
+            '''
+        }
+    }
+    }
+}

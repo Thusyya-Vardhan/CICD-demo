@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event</title>
+    <script>
+        function HandleButtonClick(){
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phno = document.getElementById("phno").value;
+
+            if(name == ""|| email==""||phno==""){
+                alert("Please fill all fields!!")
+            }else{
+                alert("Registration successful")
+            }
+        }
+    </script>
 </head>
 <body>
     <form type="registration">
@@ -27,7 +40,7 @@
         </div>
 
         <div>
-            <a href="temp.html"><button type="submit">Submit</button></a>
+            <button type="button" id="clickme" onclick="HandleButtonClick()">Submit</button>
         </div>
     </form>
 </body>
