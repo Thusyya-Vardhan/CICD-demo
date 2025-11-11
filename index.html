@@ -12,7 +12,12 @@
 
             if(name == ""|| email==""||phno==""){
                 alert("Please fill all fields!!")
-            }else{
+            }else if(!email.includes('@')){
+                alert("Not a valid email")
+            }else if(phno.length!=10){
+                alert("Not a valid mobile no")
+            }
+            else{
                 alert("Registration successful")
             }
         }

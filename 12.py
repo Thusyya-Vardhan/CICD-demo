@@ -4,7 +4,7 @@ import time
 
 driver = webdriver.Chrome()
 
-driver.get("http://localhost:8081")
+driver.get("http://localhost:8080")
 
 #check title
 print("Title:", driver.title)
@@ -20,6 +20,8 @@ time.sleep(1)
 
 #check button
 driver.find_element(By.ID,"clickme").click()
+
+time.sleep(3)
 
 alert = driver.switch_to.alert
 print("Alert message:",alert.text)
